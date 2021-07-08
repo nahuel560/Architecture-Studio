@@ -1,0 +1,63 @@
+// Color
+// -------------------------
+$gray-base : #000 !default;
+$green : #78ae00 !default;
+$green-dark : #1cb936 !default;
+$white-smoke: #f6f7f8 !default;
+$white : #fff !default;
+$black : #000 !default;
+$nocolor : transparent !default;
+$yellow : #fdff39 !default;
+$yellow-dark : #f2cb2e !default;
+$red : #ff003a !default;
+$red-dark : #ce4f3e !default;
+$orange : #e93434 !default;
+$blue : #177bd1 !default;
+$dark : #093452 !default;
+$dark-better : #0c304a !default;
+$dark : #121B1F !default;
+$cyan : #01a3d4 !default;
+$turquoise : #9c619c !default;
+$brown-light : #eb5454 !default;
+$gray-theme-base : #203334 !default;
+$gray-text : #999999 !default;
+$light-gray : #f5f5f5 !default;
+$dark-gray : lighten($gray-base, 30%) !default;
+$cd-topbar-bg : #3B424C !default;
+
+// Align
+// -------------------------
+$align-center : center !important;
+$align-left : left !important;
+$align-right : right !important;
+
+//Font
+//--------------------------
+$font-family-second: "Poppins", Helvetica, Arial, sans-serif !default;
+$font-family-three : $font-family-second !default;
+$font-awesome : 'Font Awesome 5 Free' !default;
+$font-weight-base : 400 !default;
+
+// Text transform
+// -------------------------
+$text-none : none !important;
+$text-uppercase : uppercase !important;
+$text-capitalize : capitalize !important;
+$text-lowercase : lowercase !important;
+$text-inherit : inherit !important;
+
+// Theme Margin, Padding
+// -------------------------
+$theme-margin : 30px !default;
+$theme-padding : 30px !default;
+// border
+$border-color : #dddddd !default;
+
+// Themes colors
+// -------------------------
+$theme-color : #50aab2 !default;
+$theme-color-darker : darken($theme-color, 10%);
+$theme-color-second : #1b251f !default;
+$theme-color-secondary : #181818 !default;
+$theme-color-third : #54b551 !default;
+$theme-color-default : $theme-color !default;

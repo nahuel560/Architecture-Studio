@@ -1,0 +1,369 @@
+// Prefix for Hover class names
+$nameSpace: 'hvr' !default;
+
+// Durations
+$fastDuration: .1s !default;
+$mediumDuration: .3s !default;
+$slowDuration: .5s !default;
+
+// Browser Prefixes - Which CSS prefixes should be used?
+$webkit: true !default;
+$moz: false !default;
+$ms: false !default;
+$o: false !default;
+
+// Mixins Hover
+
+@mixin prefixed($property, $value) {
+  @if $webkit == true {
+    -webkit-#{$property}: #{$value};
+  }
+
+  @if $moz == true {
+    -moz-#{$property}: #{$value};
+  }
+
+  @if $ms == true {
+    -ms-#{$property}: #{$value};
+  }
+
+  @if $o == true {
+    -o-#{$property}: #{$value};
+  }
+
+  #{$property}: #{$value};
+}
+
+@mixin keyframes($name) {
+  @if $webkit == true {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $moz == true {
+    @-moz-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $ms == true {
+    @-ms-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $o == true {
+    @-o-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@include keyframes(toTopFromBottom){
+    49% {
+        -webkit-transform: translateY(-100%);
+    }
+    50% {
+        opacity: 0;
+        -webkit-transform: translateY(100%);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+
+@mixin hardwareAccel() {    
+    @include prefixed(transform, perspective(1px) translateZ(0));
+}
+
+@mixin improveAntiAlias() {    
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+@mixin forceBlockLevel() {        
+    @include inline-block()
+}
+
+@mixin hacks() {
+    @include forceBlockLevel();
+    @include hardwareAccel();
+    @include improveAntiAlias();
+}
+
+@include keyframes(waves){
+    0% {
+        -webkit-transform: scale(0.2, 0.2);
+        transform: scale(0.2, 0.2);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        -webkit-transform: scale(0.9, 0.9);
+        transform: scale(0.9, 0.9);
+        opacity: 0;
+    }
+}
+
+@include keyframes(apus-pulse){
+    0% {        
+        @include scale(0.4);
+    }
+
+    33% {
+        @include scale(1);
+    }
+
+    66% {        
+        @include scale(0.4);
+    }
+
+    100% {
+        @include scale(0.4);
+    }
+}
+
+@include keyframes(boxscale){
+    from {
+        @include box-shadow( 0 0 0 0px rgba(255,255,255,0.2));
+    }
+    to {
+        @include box-shadow( 0 0 0 6px rgba(255,255,255,0.2));
+    }
+}
+
+@include keyframes(ripple){
+    70% {
+        @include box-shadow(0 0 0 20px rgba(255, 255, 255, 0));
+    }
+    100% {
+        @include box-shadow(0 0 0 0 rgba(255, 255, 255, 0));
+    }
+}
+
+// zoom
+.effect-1{
+    position:relative;
+    &:after{
+        content: '';
+        display: block;
+        @include size(0px,1px);
+        @include transition(all 0.3s ease 0s);
+        left:0;
+        bottom:0;
+        right:0;
+        background:transparent;
+        margin:auto;
+    }
+    &:hover{
+        &:after{
+            @include size(100%,1px);
+            background:$theme-color;
+        }
+    }
+}
+.zoom-2{
+    overflow: hidden;
+    display: block;
+    @include border-radius(3px);
+    img{
+        position: relative;
+        width: percentage(1);
+        height: auto;
+        @include transition(all .2s ease-out);
+        @include transform-origin(center,center);
+    }
+    &:hover{
+        img{
+            @include scale(1.2);
+        }
+    }
+}
+
+// filter grayscale
+.filter-grayscale {
+    @include transition(all 0.6s ease-out 0s);
+    &:hover{
+        @include filter(grayscale(100%));
+    }
+}
+
+// filter brightness
+.filter-brightness {
+    @include transition(all 0.4s ease-out 0s);
+    &:hover{
+        @include filter(brightness(0.4));
+    }
+}
+
+// filter blur
+.filter-blur{
+    @include transition(all 0.6s ease-out 0s);
+    &:hover{
+        @include filter(blur(5px));
+    }
+}
+
+.tab-pane{
+    outline: none;  
+}
+.close{ 
+    .fa{
+        @include transition(all 1s ease-in-out);
+    }
+    &:hover{
+        .fa{
+            @include rotate(360deg);
+        }
+    }
+}
+
+.image-overlay-1{
+    &:after,&:before{
+        content:"";
+        display: block;
+        position: absolute;
+        z-index: 100;
+        background: rgba($black,.7);
+        @include square(percentage(1));
+        @include rtl-left(0);
+        @include opacity(0);
+        @include transition(all 0.3s ease 0s);
+    }
+    &:after{
+        top: -100%;
+    }
+    &:before{
+        bottom: -100%;
+    }
+    &:hover{
+        &:after{
+            top: -50%;
+            @include opacity(1);
+        }
+        &:before{
+            bottom: -50%;
+            @include opacity(1);
+        }
+    }
+}
+
+
+// Plus Button Effects
+.image-plus-1{
+    position: relative;
+    &::before{
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        content: "";
+        z-index: 100;
+        @include square(percentage(1));
+        @include rtl-left(0);
+        @include opacity(0);
+        @include transition(all 0.3s ease 0s);
+        @include transform(scale(1.5));
+        background: url('#{$image-theme-path}plus.png') no-repeat scroll center center / 60px 60px rgba($black,.6);
+    }
+    &:hover{
+        &::before{
+            visibility: visible;
+            @include opacity(.6);
+            @include transform(scale(1));
+        }
+    }
+}
+
+.image-plus-2{
+    position: relative;
+    &::before{
+        content: "";
+        z-index: 199;
+        top: 0;
+        position: absolute;
+        background: url('#{$image-theme-path}plus.png') no-repeat scroll center center / 60px 60px rgba($black,.8);
+        @include square(percentage(1));
+        @include rtl-left(0);
+        @include transition(all 0.3s ease 0s);
+        @include opacity(0);
+        @include background-size(10px 10px, 100% 100%);
+        @include background-origin(padding-box, padding-box);
+    }
+    &:hover{
+        &::before{
+            opacity: .6;
+            visibility: visible;
+            @include background-size(60px 60px, 100% 100%);
+        }
+    }
+}
+
+.image-plus-3{
+    position: relative;
+    &::before{
+        content: "";
+        top: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: 100;
+        @include transform(scale(0.5) rotateX(180deg));
+        @include square(percentage(1));
+        @include rtl-left(0);
+        @include opacity(0);
+        @include transition(all 0.3s ease 0s);
+        background: rgba($black,.8);
+    }
+    &:hover{
+        &::before{
+            visibility: visible;
+            @include opacity(.6);
+            @include transform(scale(1) rotateX(0deg));
+        }
+    }
+}
+
+// Icon Effect 1
+.icon-effect-1{
+    position: relative;
+    &:before{
+        content: "";
+        display: block;
+        @include scale(0.5);
+        @include border-radius(percentage(.5));
+        @include transition(transform 0.5s cubic-bezier(0.19,1,0.22,1),background-color 0.2s cubic-bezier(0.19,1,0.22,1));
+        @include vertical-center(100%,100%);
+        background-color: transparent;
+    }
+    &:hover{
+        &:before{
+            @include scale(1);
+            @include transition(transform 0.5s cubic-bezier(0.19,1,0.22,1),background-color 0.2s cubic-bezier(0.19,1,0.22,1));
+        }
+    }
+} 
+
+/* Pulse Grow */
+@include keyframes(#{$nameSpace}-pulse-grow) {
+    to {
+        @include prefixed(transform, scale(1.1));
+    }
+}
+
+@mixin pulse-grow {
+    @include hacks();
+    &:hover,
+    &:focus,
+    &:active {
+        @include prefixed(animation-name, #{$nameSpace}-pulse-grow);
+        @include prefixed(animation-duration, $mediumDuration);
+        @include prefixed(animation-timing-function, linear);
+        @include prefixed(animation-iteration-count, infinite);
+        @include prefixed(animation-direction, alternate);
+    }
+}

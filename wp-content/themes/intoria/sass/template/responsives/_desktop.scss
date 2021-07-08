@@ -1,0 +1,108 @@
+@media (max-width: 1440px) {    
+    .apus-search-form{
+        > a.btn-search-icon{            
+            @include size(60px,80px);
+        }    
+    }
+    .contact-sidebar-wrapper{
+        padding: 60px 30px;
+        form{
+            margin-bottom: 30px;
+            > *{
+                margin-bottom: 20px;
+            }
+        }
+        .contact_close{
+            top: 0px;
+        }
+    }
+    .widget.widget_apus_contact_info{
+        .contact-info-widget{
+            > div{                
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .widget-projects{
+        &.style2{
+            .widget-content{
+                .isotope-item{
+                    &:first-child{
+                        .isotope-item-inner{
+                            min-height: 335px;
+                        }
+                    }
+                }
+            }
+        }
+        &.carousel{
+            .project-content-box{
+                padding: 20px;
+                min-width: 310px;
+                min-height: 222px;                
+                .entry-title{
+                    font-size: rem-calc(16);                    
+                    margin-bottom: 15px;
+                    @include line-height(16px,26px);
+                }
+                .description{
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        .isotope-filter{
+            li {
+                line-height: 26px;
+                @include rtl-margin-right(5px);
+            }
+        }        
+        .widget-content{
+            .isotope-item{
+                .title{
+                    font-size: rem-calc(16);
+                }
+                .entry-title{
+                    font-size: rem-calc(14);
+                    margin-top: 15px;
+                }
+                .address{
+                    margin-top: 5px;
+                }
+                .desc {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }                
+                &:first-child{
+                    .isotope-item-inner {
+                        padding: 19px 20px;
+                        min-height: auto;
+                    }   
+                }
+            }
+        }
+    }
+    .elementor-843{
+        .elementor-element{
+            &.elementor-element-09207d8{
+                > .elementor-element-populated{                    
+                    padding-top: 80px;
+                }    
+            }
+        }
+    }
+}
+
+@media(min-width: 1200px) {       
+    .lg-clearfix {
+        clear: both;
+    }  
+    .hidden-lg-dot{
+        .slick-dots{
+            display: none;
+        }
+    }
+} 
+
+@media(max-width: 1168px){   
+
+}

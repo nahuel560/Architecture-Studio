@@ -1,0 +1,370 @@
+// layout for woocommerce
+.main-page {
+	.page-links{
+		clear: both;
+		overflow: hidden;
+		padding:$theme-padding 0;
+		margin:0;
+	}
+	#comments{
+		margin-top:30px;
+		clear: both;
+	}
+}
+
+.apus-faq-auto{
+	padding-left: 0px;
+	padding-right: 0px;
+	@include media(tablet){
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+	@include media(desktop){
+		padding-left: 160px;
+		padding-right: 160px;
+	}
+}
+
+div.wpcf7-validation-errors{	
+	padding: 15px;
+}
+.contact-form-content{
+	padding: $theme-padding;
+	background: $contact-bg;
+	min-height: 260px;
+	.rounded{
+		@include rtl-margin-right(10px);
+		color: $white;
+		@include size(40px,40px);
+		background: darken($body-bg, 20%);
+		.fa,.icon{			
+			font-size: 16px;
+			margin: 13px;
+		}
+	}
+	small{
+		color: darken($text-color, 20%);
+	}
+}
+.user{
+	> div{
+		display: none;
+		&.active{
+			display: block;
+		}
+	}
+	max-width:570px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	form{
+		margin-bottom: 25px !important;
+	}
+	.title{
+		font-size: 30px;
+		margin:0 0 20px;
+		@media(min-width: 1200px){
+			font-size: 48px;
+		}
+	}
+	.create {
+		margin-bottom: 30px;
+		@media(min-width: 1200px){
+			margin-bottom: 50px;
+		}
+		a{
+			font-size: 12px;
+			text-decoration: underline;
+			text-transform: uppercase;
+		}
+	}
+}
+// Page Not Found
+//----------------------------------
+.page-404{
+	.not-found{   		
+		margin: 50px 0 75px 0;
+		@include media(tablet){
+			margin: 100px 0 125px 0;			
+		}
+		@include media(desktop){
+			margin: 150px 0 175px 0;			
+		}
+	}   	
+	.description{						
+		margin: 0;						
+		padding: 20px 30px;
+		font-weight: 300;		
+		font-size: rem-calc(14);
+		color: $headings-color;
+		@include line-height(14px,24px);	
+
+		@include media(tablet){
+			padding: 40px 15%;
+			font-size: rem-calc(16);
+			@include line-height(16px,26px);	
+		}
+
+		@include media(desktop){	
+			font-size: rem-calc(20);
+			@include line-height(20px,30px);
+		}
+	}
+	.title-big{
+		color: $theme-color;
+		font-size: rem-calc(80);
+		text-transform: none;
+		line-height: 1;
+		margin: 0;
+		font-family: $font-family-base;
+		@include media(tablet){
+			font-size: rem-calc(120);
+		}
+		@include media(desktop){
+			font-size: rem-calc(160);
+		}
+	}
+	.sub-title{
+		font-size: rem-calc(24);
+		font-weight: 500;
+		margin: 0;
+		padding: 0;		
+		text-transform: capitalize;
+		@include line-height(24px,34px);
+		@include media(desktop){	
+			font-size: rem-calc(38);
+			@include line-height(38px,48px);
+		}
+		@include media(wide){
+			font-size: rem-calc(42);
+			@include line-height(42px,52px);
+		}
+	}
+	.widget-search{
+		max-width: 500px;
+		margin: auto;
+		margin-bottom: 30px;
+	}
+	.page-content{
+		margin-bottom: 0;
+	}
+	.btn-to-back{
+		@include button-theme-base();
+		@include button-theme-effect();
+	}	
+	input[type="text"]{		
+		@include rtl-padding(0, 53px, 0, 0);
+		border-bottom: 2px solid $input-border;
+		@include hover-focus-active(){
+			border-color: $theme-color;
+		}
+	}
+	form{
+		.btn{			
+			margin: 0;
+			padding: 0;			
+			border: none;
+			min-width: auto;	
+			@include size(auto,44px)	
+		}
+	}
+}
+
+// Page Coming Soon
+//----------------------------------
+body{
+	&.home-coming-soon{
+		@include background-size(cover);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: $gray-theme-base;		
+		background-image: url('../images/coming-soon-bkg.jpg');
+		&:after {
+			content: "";			
+			background-color: rgba($gray-theme-base, .5);		
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;			
+			width: 100vw;			
+			height: 100vh;			
+			@include media(desktop){
+				top: 0;
+				height: 100vh;
+			}
+		}	
+		.apus-footer{
+	        position: fixed;  
+	        background: $white;
+	        padding: 0;
+	        width: 100%;                       
+	        color: $footer-color;
+	        left: 0;
+	        right: 0;
+	        bottom: 0;        
+	        z-index: 1;
+	        @include media(desktop){            
+	            padding: 30px 0;  
+	            color: $white;
+	            background: transparent;                                
+	        } 
+	        .apus-copyright-link{
+	            color: $theme-color;
+	            @include media(desktop){
+	                color: $white;
+	            }
+	        } 
+	        .widget-social{
+	            .social{
+	                a {
+	                    color: $link-color;
+	                    @include hover(){
+	                        color: $theme-color;                        
+	                    }
+	                    @include media(desktop){
+	                        color: $white;
+	                    }
+	                }      
+	            }             
+	        }         
+	    }
+	    .header-mobile{
+	    	z-index: 1;
+	    }	
+	}
+}
+
+body.elementor-editor-active {
+	.box-relative{
+		.elementor-row{
+			.elementor-widget,
+			.elementor-column,
+			.elementor-column-wrap, 
+			.elementor-widget-wrap{
+				position:relative;
+			}
+		}
+	}
+}
+
+.list-contact-form-7{
+	li{
+		line-height: 36px;	
+		position: relative;
+		@include rtl-padding-left(30px);
+		a{
+			color: $text-color;
+			@include hover-focus-active() {
+				color: $theme-color;
+			}
+		}
+		.fa{
+			color: $entry-blog-date-color;
+			font-size: 18px;
+			position: absolute;
+			top: 10px;			
+			@include rtl-left(0);
+			@include inline-block();
+		}
+	}
+}
+
+.apus-list-contact{
+	@include flexbox();
+	@include flex-direction(column);
+	@include media(tablet){
+		@include flex-direction(row);
+	}
+	ul{
+		margin: 0;
+		@include rtl-padding-right(70px);
+		li{
+			margin-bottom: 5px;
+			strong{
+				color: $headings-color;
+				font-size: 20px;
+				font-weight: $font-weight-normal;
+				@include line-height(20px,30px);
+				font-family: $headings-font-family;
+			}
+			a{
+				color: $text-color;
+				display: block;
+				@include hover-focus-active(){
+					color: $theme-color;
+				}
+			}
+		}
+	}
+}
+
+.privacy-title{	
+	font-size: rem-calc(20);	
+	margin-bottom: 15px;
+	margin-top: 15px;
+	line-height: line-height(20px,30px);
+	@include media(desktop){
+		margin-bottom: 30px;
+		margin-top: 30px;
+	}
+	&:first-child{
+		margin-top: 0px;	
+	}
+}
+.privacy-sub-title{
+	font-size: rem-calc(16);	
+	margin-bottom: 15px;
+	margin-top: 15px;
+	line-height: line-height(16px,28px);
+	@include media(desktop){
+		margin-bottom: 30px;
+		margin-top: 30px;
+	}
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.elementor-element{
+	&.elementor-element-5502a7b8{
+		.elementor-text-editor{
+			p{
+				margin: 15px 0;
+				@include media(desktop){
+					margin: 30px 0;
+				}
+			}
+		}		
+	}
+}
+
+body{
+	&.faq-page{
+		background-color: $light-gray;
+	}
+	&.single-apartment{
+		.main-content{
+			padding-bottom: 0;
+		}	
+	}
+	&.apartment-style1{
+		background-color: $table-bg-accent;
+	}
+}
+
+// Term Page
+.apus-term-page{
+	.elementor-widget-heading{    
+	    h1,h2,h3,h4,h5,h6{
+	        &.elementor-heading-title{                
+	            margin-bottom: 15px;
+	            @include media(tablet){
+	            	margin-bottom: 20px;
+	            }
+	            @include media(desktop){
+	            	margin-bottom: 40px;
+	            }
+	        }
+	    }  
+	}
+}

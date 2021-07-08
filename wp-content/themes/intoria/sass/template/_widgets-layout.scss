@@ -1,0 +1,262 @@
+/* block */
+.#{$block-selector} {
+    margin-bottom: $block-module-margin-bottom;
+    position: relative;
+    padding: $block-module-padding;
+    background: transparent;    
+    .#{$block-heading-selector}{
+        @include headings-theme-base;
+    }
+    &.widget_apus_contact_info{
+        .title{
+            font-weight: 500;
+            color: $link-color;
+            font-size: rem-calc(16);
+            line-height: line-height(16px,22px);            
+        }
+        .icon{
+            color: $gray-theme-base;
+            font-size: rem-calc(20);
+            > *{
+                margin: 0;
+            }
+        }
+        .contact-info-widget{
+            > div{
+                margin-bottom: 40px;
+                margin-top: 0;
+                &:last-child {
+                    margin-bottom: 0;   
+                }                
+            }
+        }
+    }
+}
+
+.wp-caption {
+    margin-bottom: 30px !important;    
+    div,p{
+        &.wp-caption-text {
+            color: $text-color !important;
+            font-size: rem-calc(12) !important;
+            font-family: $headings-font-family !important;
+            margin: 0 !important;
+            text-align: center !important;
+            padding: 5px !important;   
+            line-height: 22px !important;            
+        }
+    }    
+}
+
+// Sidebar
+.sidebar,
+.#{$app-prefix}-sidebar {
+    p{
+        margin: 0 0 10px;
+    }
+    .widget{        
+        margin: 0 0 30px 0;           
+        .#{$block-heading-selector}{
+            font-size: rem-calc(16);
+            margin-bottom: rem-calc(12); 
+            font-weight: $headings-font-weight;
+            @include line-height(16px,26px);            
+            @include rtl-text-align-left();            
+            @include media(tablet){
+                font-size: 18px;
+                @include line-height(18px,28px);
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;   
+        }        
+    }
+
+    .wp-caption{
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-right: 0px;      
+        max-width: 100%;  
+        &.alignnone{
+            padding-left: 0px;
+            padding-right: 0px;
+            margin-left: 0px;
+            margin-right: 0px;    
+            margin-bottom: 0 !important;   
+        }
+    }
+
+    .widget-search{                
+        form{
+            background-color: $white;
+        }
+        .btn{
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            color: $link-color;
+            font-size: inherit;
+            min-width: auto;         
+            @include square(40px);
+            @include rtl-border-left(0);
+            @include hover-focus-active() {                
+                background: transparent;                
+            } 
+            &:before,&:after {
+                content: normal;
+            }    
+        }
+        .form-control{            
+            color: $gray-text;
+            background: $input-bg;        
+            height: rem-calc(40);
+            font-weight: 400;
+            text-transform: none;     
+            font-size: rem-calc(13);         
+            border: 1px solid $input-border;       
+            @include transition($linear);    
+            @include rtl-padding(rem-calc(5), rem-calc(40), rem-calc(5), rem-calc(12));             
+            @include placeholder-input($gray-text,none);            
+            @include hover-focus-active() {
+                border-color: $theme-color;
+            }            
+        }
+    }
+
+    // widet porducts list
+    .apus-products-list{
+        border-style: solid;
+        border-color: $border-color;
+        border-width:0 1px 1px;
+        .product-block{
+            padding: 20px;
+            margin: 0;
+        }
+    }
+    // widget instagram
+    .row.instagram-pics{
+        margin-left: -6px;
+        margin-right: -6px;
+        > [class*="col-md"]{
+            padding-left: 6px;
+            padding-right: 6px;
+            margin-bottom: 12px;
+        }
+    }
+    // widget single images
+    .widget_apus_single_image{
+        margin-bottom: 30px;
+    }
+}
+.page-shop{
+    .sidebar,
+    .#{$app-prefix}-sidebar {
+        .widget{
+            .#{$block-heading-selector}{
+                font-size: 15px;
+                margin: 0 0 20px;
+                font-weight: $font-weight-semi-bold;
+                text-transform:uppercase;
+                letter-spacing:1px;
+            }
+        }
+    }
+}
+// top bar
+#apus-topbar{
+    // widget info
+    .info-topbar{
+        .textwidget{
+            > span{
+                @include rtl-padding-right(10px);
+                @include rtl-margin-right(10px);
+                @include rtl-float-left();
+                @include rtl-border-right(1px solid $border-color);
+                &:last-child{
+                    border: 0;
+                }
+            }
+        }
+        .fa{
+            @include rtl-margin-right(8px);
+        }
+    }
+}
+// footer 
+.apus-footer{
+    color: $footer-color;
+    .widget-footer-contact{
+        margin-bottom: 0;
+        @include rtl-margin-left(0);
+        @include media(desktop){
+            @include rtl-margin-left(40px);
+        }
+        ul{
+            li{
+                color: $white;
+                margin-bottom: 10px;
+                @include line-height-rem(26);
+                @include media(desktop){
+                	margin-bottom: 15px;                
+                }
+                span{
+                    color: $footer-color;
+                }
+                .theme-color{
+                    color: $theme-color;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }                
+            }
+        }
+        &.dark{
+        	.widget-title{
+        		color: $headings-color;
+        	}
+        	ul{
+        		li{
+        			color: $footer-color;
+        			span{
+        				color: $headings-color;
+        				&.theme-color{
+        					color: $theme-color;
+        				}
+        			}
+        		}
+        	}
+        }
+    }
+    .wpb_button, .wpb_content_element, ul.wpb_thumbnails-fluid > li{
+        margin-bottom:20px;
+    }
+    &.dark {
+        .#{$block-heading-selector}{
+            color:$white;
+        }
+        background: $gray-base;
+        color: $gray-text;
+        a{
+            color: $gray-text;
+            @include hover-focus(){
+                color: $white;
+            }            
+        }
+    }
+}
+// copyright
+.apus-copyright{
+    .wpb_content_element,
+    .widget{
+        margin-bottom: 0 !important;
+    } 
+    .menu li{
+        display: inline-block;
+        @include rtl-margin-right(10px);
+        margin-bottom:0;
+        &:last-child{
+            margin:0;
+        }
+    } 
+}

@@ -1,0 +1,71 @@
+/*------------------------------------------------------------------
+[Table of contents]
+1. base
+2. elements
+3. form
+4. layout
+5. menu
+6. pages 
+7. post
+8. property
+9. teams
+10. effect 
+11. utilities
+12. widgets layout
+13. widgets 
+14. responsive
+-------------------------------------------------------------------*/
+// import variables and mixins
+@import "vars/vars-global";
+@import "vars/variables";
+@import "vars/template-vars";
+@import "rtl/rtl";
+@import "mixins/mixins-grid";
+@import "mixins/mixins";
+@import "mixins/template-mixins";
+
+/* 10. effect */
+@import "template/theme-effect";
+
+/* 1. base */
+@import "template/fonts";
+
+@import "template/base";
+
+/* 2. elements */
+@import "template/widgets-layout";
+
+/* 3. form */
+@import "template/form";
+
+/* 4. layout */
+@import "template/layout";
+
+/* 5. menu */
+@import "template/menu";
+
+/* 6. pages */
+@import "template/pages";
+
+/* 7. post */
+@import "template/post";
+
+/* 8. property */
+@import "template/property";
+
+/* 9. teams */
+@import "template/teams";
+
+/* 11. utilities */
+@import "template/utilities";
+
+/* 12. widgets layout */
+
+@import "template/elements";
+
+/* 13. widgets */
+@import "template/widgets";
+
+/* 14. responsive */
+
+@import "template/responsive";

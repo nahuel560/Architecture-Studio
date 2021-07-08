@@ -1,0 +1,150 @@
+@media(max-width:991px){
+    .sidebar{        
+        &.sidebar-left,
+        &.sidebar-right{
+            top: 0;
+            z-index: 999;            
+            max-width: 80%;
+            background: $white;
+            position: fixed;
+            padding: 0 0 30px 0;
+            @include size(400px,100%);
+            @include transition-all(); 
+            .widget{            
+                margin: 0;
+                padding: 30px;
+                .posts-list{
+                    .top-info {
+                        font-size: 12px;                
+                    }
+                }             
+                .widget-title, .widgettitle, .widget-heading{
+                    margin-bottom: 20px;
+                }            
+            }
+        }
+        &.sidebar-left{            
+            @include rtl-left(0);
+            @include translateX(-100%);
+            &.active{
+                @include translateX(0);
+            }
+        }
+        &.sidebar-right{
+            @include rtl-right(0);
+            @include translateX(100%);
+            &.active{
+                @include translateX(0);
+            }
+        }
+        .entry-title{
+        	@include rtl-text-align-left();
+        }
+    }     
+    .widget-testimonials{
+        .slick-carousel{
+            .slick-arrow{
+                left: 50%;             
+                right: auto;                   
+                @include translateX(-50%);                
+                &.slick-prev{
+                    @include rtl-margin-right(50px);
+                }
+                &.slick-next{
+                    @include rtl-margin-left(50px);
+                }
+            }
+        }
+    }
+    .widget-team{
+        &.style1{
+            .content{
+                > *{
+                    @include transition(none);
+                    @include transform(none);
+                }
+            }
+        }
+    }
+    .widget-blogs{
+        &.has-arrow{
+            .slick-carousel{
+                .slick-dots{
+                    top: -99999px;
+                    left: -99999px;
+                }
+            }
+        }
+    }
+}
+
+/* Portrait */
+
+@media (min-width: 768px) and (max-width: 1024px) {  
+	body{
+		&.admin-bar{		
+			.apus-offcanvas,.sidebar{			
+				top: 46px;
+			}
+            &.home-coming-soon{
+                &:after{
+                    height: calc(100vh + 46px);                    
+                }
+            }
+		}
+	}
+    .widget-projects{
+        &.style2{
+            .widget-content{
+                .isotope-item{
+                    &:first-child{
+                        .isotope-item-inner{
+                            min-height: auto;
+                            padding: 29px 30px;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+    .elementor-843{
+        .elementor-element{
+            &.elementor-element-09207d8{
+                > .elementor-element-populated{
+                    padding-top: 0;
+                }     
+            }
+        }
+    }
+    .widget-features-box{
+        &.style3{
+            .item{
+                &:last-child {                    
+                    .item-inner{                        
+                        margin-bottom: 0;
+                    }   
+                }               
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {		
+	
+}
+
+/* Ipad Pro Portrait + 1024×1366 */
+@media only screen 
+and (min-device-width: 1024px) 
+and (max-device-width: 1366px) 
+and (orientation: portrait){
+	
+}
+
+/* Ipad Pro Landscape + Desktop 1280x800 */
+@media only screen 
+and (min-device-width: 1024px) 
+and (max-device-width: 1366px) 
+and (orientation: landscape){     	
+  	
+}
